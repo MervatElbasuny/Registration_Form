@@ -21,7 +21,7 @@
 }
 
 body{
-	background-image: url('../img/bbbb.jpg');
+	background-image: url('bbbb.jpg');
 	/* background:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.wallpaperscraft.com/image/single/lake_forest_snow_130421_1280x720.jpg'); */
 	background-size: cover;
 	width: 100%;
@@ -212,7 +212,7 @@ transform: translateX(50%);
 }
 
 .overlay-shared-bg {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/cake.jpg');
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('cake.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 }
