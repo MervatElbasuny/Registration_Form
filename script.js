@@ -108,6 +108,7 @@ function signUp() {
             text: "Please check your input fields",
             icon: "warning"
         });
+        
     }
 }
 // End
@@ -142,7 +143,7 @@ function signIn() {
     // if he is a user and Successful sign-in logic - redirect to home page
   else {
         sessionStorage.setItem('loggedInUser', JSON.stringify(user));
-        location = 'home/home.html';
+        location ='home/home.html';
         clearForm();
     }
 
@@ -182,8 +183,16 @@ function clearForm() {
     signUpPassword.value = '';
     signInEmail.value='';
     signInPassword.value='';
+
+ // Clear input
+    const inputs = [signUpName, signUpEmail, signUpPassword, signInEmail, signInPassword];
+    inputs.forEach(input => {
+        input.classList.remove("is-valid", "is-invalid");  
+    });
 }
 // End
+
+
 
 
 // function to return to signin form
