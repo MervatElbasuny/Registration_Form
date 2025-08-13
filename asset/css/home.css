@@ -1,0 +1,440 @@
+/* ****************************Start general style************************************ */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+  overflow-x: hidden;
+}
+.slider{
+  z-index: 999;
+}
+/*  *****************************Start loader ************************************** */
+.load-up{
+  width: 100%;
+  height: 50%;
+  position: fixed;
+  top: 0;
+  background-color:#fff;
+  z-index: 997;
+  animation: load-up 1.5s forwards;
+  animation-delay: .3s;
+}
+.load-down{
+  width: 100%;
+  height: 50%; 
+  position: fixed;
+  bottom: 0;
+  background-color:#fff;
+  bottom: 0;
+  z-index: 997;
+  animation:  load-down 1.5s forwards;
+}
+@keyframes load-up{
+  from{
+
+      height: 50%;    
+  }
+  to{
+      height: 0%;
+      opacity: 0;
+      
+  }
+}
+  
+@keyframes load-down {
+ from{
+  height: 50%;
+ }
+ to{
+  height: 0% ;
+  opacity: 0;
+ }
+} 
+
+
+.lds-ring{
+  width: 50px;
+  height: 50px;
+  border: 8px solid gray;
+  border-top-color:var(--white-color);
+  border-radius: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+  animation: loading 1s ease;
+  animation-delay: .5s;
+  opacity: 0;
+}
+@keyframes loading{
+  from{
+      transform: rotate(0turn);
+  }
+  to{
+      transform: rotate(1turn);
+      opacity: 1;
+  }
+}
+/*  *****************************End loader ************************************** */
+
+
+/* *******************************Start nav section******************************* */
+nav{
+    z-index: 10;
+    background-color: #e9d0d0;
+    box-shadow: 0px 4px 0px #bebebe, -39px -37px 16px #ffffff;
+
+}
+nav .logo{
+    width: 20%;
+}
+nav .navbar-brand img{
+    width: 50%;
+}
+nav .navbar-nav li {
+  position: relative;
+  display: block;
+  float: left;
+  padding-left: 12px;
+  white-space: nowrap;
+  background: url(../img/marker0.png) 0 center no-repeat;
+
+}
+nav .navbar-nav .nav-link{
+    width: fit-content;
+    color: #7b553f !important;
+    font-weight: 600;
+    font-family: "Montserrate" , sans-serif;
+}
+
+.nav-link::after{
+	content: "";
+    background-color: white;
+    width: 0%;
+    height: 5%;
+    position: absolute;
+    top: 2rem;
+    left: 0.6rem;
+    transition: .3s;
+}
+.nav-link:hover::after{
+	width: 70%;
+}
+.navbar-nav li:has(.active) ::after{
+	width: 60%;
+}
+/* ********************************************End nav****************************************  */
+
+
+/* ******************************************** Start home************************************  */
+.home{
+    background-image:linear-gradient(rgba(0,0,0,.6) , rgba(0,0,0,.6)) , url("../img/bg1.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0;
+    z-index: 2;
+    min-height: 150vh;
+}
+
+.content h1{
+    font-size: 30px;
+    top: 8rem;
+}
+.content p{
+    bottom: -11rem;
+    font-family: "Outfit";
+    font-size: 20px;
+}
+/* ********************************************End home****************************************  */
+
+
+/* ********************************************Strt Logout button****************************************  */
+.logoutButton {
+    --figure-duration: 100ms;
+    --transform-figure: none;
+    --walking-duration: 100ms;
+    --transform-arm1: none;
+    --transform-wrist1: none;
+    --transform-arm2: none;
+    --transform-wrist2: none;
+    --transform-leg1: none;
+    --transform-calf1: none;
+    --transform-leg2: none;
+    --transform-calf2: none;
+    background: none;
+    border: 0;
+    color: #66370b;
+    cursor: pointer;
+    display: block;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    height: 40px;
+    outline: none;
+    padding: 0 0 0 20px;
+    perspective: 100px;
+    position: relative;
+    text-align: left;
+    width: 115px;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .logoutButton::before {
+    border-radius: 5px;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: none;
+    transition: transform 50ms ease;
+    width: 100%;
+    z-index: 2;
+  }
+  .logoutButton:hover .door {
+    transform: rotateY(20deg);
+  }
+  .logoutButton:active::before {
+    transform: scale(0.96);
+  }
+  
+  .logoutButton:active .door {
+    transform: rotateY(28deg);
+  }
+  .logoutButton.clicked::before {
+    transform: none;
+  }
+  .logoutButton.clicked .door {
+    transform: rotateY(35deg);
+  }
+  .logoutButton.door-slammed .door {
+    transform: none;
+    transition: transform 100ms ease-in 250ms;
+  }
+  .logoutButton.falling {
+    animation: shake 200ms linear;
+  }
+  .logoutButton.falling .bang {
+    animation: flash 300ms linear;
+  }
+  
+  .logoutButton.falling .figure {
+    animation: spin 1000ms infinite linear;
+    bottom: -1080px;
+    opacity: 0;
+    right: 1px;
+    transition: transform calc(var(--figure-duration) * 1ms) linear, bottom calc(var(--figure-duration) * 1ms) cubic-bezier(0.7, 0.1, 1, 1) 100ms, opacity calc(var(--figure-duration) * 0.25ms) linear calc(var(--figure-duration) * 0.75ms);
+    z-index: 1;
+  }
+  .logoutButton--light::before {
+    background-color: #f4f7ff;
+  }
+  .logoutButton--light .button-text {
+    color: #1f2335;
+  }
+  
+  .logoutButton--light .door, .logoutButton--light .doorway {
+    fill: #1f2335;
+  }
+  .button-text {
+    color: #83440a;
+    font-family: "Montserrate" , sans-serif;
+    font-weight: 600;
+    position: relative;
+    z-index: 10;
+  }
+  svg {
+    display: block;
+    position: absolute;
+  }
+  
+  .figure {
+    bottom: 5px;
+    fill: #83440a;
+    right: 18px;
+    transform: var(--transform-figure);
+    transition: transform calc(var(--figure-duration) * 1ms) cubic-bezier(0.2, 0.1, 0.8, 0.9);
+    width: 30px;
+    z-index: 4;
+  }
+  .door, .doorway {
+    bottom: 4px;
+    fill: #f4f7ff;
+    right: 12px;
+    width: 32px;
+  }
+  .door {
+    transform: rotateY(20deg);
+    transform-origin: 100% 50%;
+    transform-style: preserve-3d;
+    transition: transform 200ms ease;
+    z-index: 5;
+  }
+  .door path {
+    fill: #83440a;
+    stroke: #83440a;
+    stroke-width: 4;
+  }
+  .doorway {
+    z-index: 3;
+  }
+  .bang {
+    opacity: 0;
+  }
+  .arm1, .wrist1, .arm2, .wrist2, .leg1, .calf1, .leg2, .calf2 {
+    transition: transform calc(var(--walking-duration) * 1ms) ease-in-out;
+  }
+  .arm1 {
+    transform: var(--transform-arm1);
+    transform-origin: 52% 45%;
+  }
+  .wrist1 {
+    transform: var(--transform-wrist1);
+    transform-origin: 59% 55%;
+  }
+  .arm2 {
+    transform: var(--transform-arm2);
+    transform-origin: 47% 43%;
+  }
+  .wrist2 {
+    transform: var(--transform-wrist2);
+    transform-origin: 35% 47%;
+  }
+  .leg1 {
+    transform: var(--transform-leg1);
+    transform-origin: 47% 64.5%;
+  }
+  .calf1 {
+    transform: var(--transform-calf1);
+    transform-origin: 55.5% 71.5%;
+  }
+  .leg2 {
+    transform: var(--transform-leg2);
+    transform-origin: 43% 63%;
+  }
+  .calf2 {
+    transform: var(--transform-calf2);
+    transform-origin: 41.5% 73%;
+  }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg) scale(0.94);
+    }
+    to {
+      transform: rotate(359deg) scale(0.94);
+    }
+  }
+  @keyframes shake {
+    0% {
+      transform: rotate(-1deg);
+    }
+    50% {
+      transform: rotate(2deg);
+    }
+    100% {
+      transform: rotate(-1deg);
+    }
+  }
+  @keyframes flash {
+    0% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  /***********************************End log out button********************************/
+
+  /***********************************start swiper*************************************/
+  .swiper {
+    max-width: 50%;
+    overflow: visible;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+  }
+  .swiper-slide::after {
+    position: absolute;
+    content: "";
+    inset: 0;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: linear-gradient(to bottom right, #b8b8b88f, #ffffff5e);
+  }
+  
+  .swiper-slide-active::after {
+    background: none;
+  }
+  .swiper-slide > div {
+    text-align: center;
+    display: none;
+    opacity: 0;
+  }
+  .swiper-slide-active div {
+    display: block;
+    opacity: 1;
+  }
+  
+  .swiper-slide h2 {
+    /* font-size: 15px; */
+    font-family: "Libre Baskerville", serif;
+    position: relative;
+    color: white;
+  }
+  
+  .swiper-slide h2::after {
+    position: absolute;
+    content: "";
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    background: linear-gradient(#e66465, #9198e5);
+  }
+  
+  @keyframes line {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  .swiper-slide-active h2::after {
+    animation: line 0.5s linear forwards;
+  }
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0px 3px 17px rgb(0 0 0 / 25%);
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+  }
+  .swiper-slide a{
+    position: relative;
+    bottom: -1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .swiper-slide h2 {
+      font-size: 1.5rem;
+    }
+  }
+  /***********************************End swiper*************************************/
+  

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sign in form</title>
+	<link rel="stylesheet" type="text/css" href="../asset/css/all.min.css">
+	<link rel="stylesheet" type="text/css" href="../asset/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../asset/css/style.css">
+</head>
+
+<body class="d-flex justify-content-center  align-items-center">
+<!-- ------------------------------------Start main--------------------------------------- -->
+<main class="main-content" id="main">
+<div class="container">
+<div class="row">
+
+<!-- start form1 -->
+<div class="form-content sign-up-content bg-white d-flex justify-content-center align-items-center" id="signUpForm">
+	<div class="form"> 
+		<!-- start logo-form -->
+		<div class="img mt-3 mb-1 text-center">
+			<img src="../asset/img/log5.jpg">
+		</div>
+		<!-- End logo-form -->
+		
+		<span class="d-flex justify-content-center align-items-center"> use your email for registration</span>
+
+		<!-- START FORM-1-CONTENT -->
+		<div class="mt-1">
+			<div class="name">
+				<label class="" for="validationDefaultUsername"></label>
+				<input class="form-control bg-light input" type="text" name="name" placeholder="Name "  required id="signUpName" oninput="validateName(this)">
+				<small class="text-capitalize text-danger d-none " id="nameError"></small>
+			</div>
+			
+			<div class="email">
+				<label class=" " for="signUpEmail"></label>
+				<input class="form-control bg-light" type="email" name="" placeholder="Email " required id="signUpEmail" oninput="validateEmail(this)">
+				<small class="text-capitalize text-danger d-none " id="urlError"></small>
+			</div>
+			
+			<div class="pass">
+				<label class="" for="signUpPassword"></label>
+				<input class="form-control bg-light" type="password" name="" placeholder=" Password" required id="signUpPassword" oninput="validatePassword(this)">
+				<small class="text-capitalize text-danger d-none " id="passError"></small>
+
+			</div>
+			
+		</div>
+
+		<div class="signup-button d-flex align-items-center justify-content-center mx-auto">
+			<button class="border border-white text-capitalize  fs-6 mt-3 py-2 px-4" id="signUp">Sign Up</button>
+		</div>
+
+	</div>
+</div>
+<!-- End form1-content -->
+
+
+<!----start form2----->
+<div class="form-content sign-in-content" id="signInForm">
+<div class="form bg-white d-flex justify-content-center flex-column align-items-center">
+
+	<!-- start logo-form -->
+	<div class="img mb-1 text-center">
+		<img src="../asset/img/log5.jpg">
+	</div>
+	<!-- End logo-form -->
+
+	<span>use your account</span>
+	<div>
+	<div class=" ">
+		<label class=""></label>
+		<input class="form-control bg-light" type="email" name="email" placeholder="Email" required id="signInEmail" oninput="validatesiginEmail(this)">
+		<small class="text-capitalize text-danger d-none " id="sigInEmailError"></small>
+	</div>
+	<div>
+		<label class=""></label>
+		<input class="form-control bg-light" type="password" name="password" placeholder="Password" required id="signInPassword" oninput="validatesigninPassword(this)">
+		<small class="text-capitalize text-danger d-none " id="signInPassError"></small>
+	</div>
+	</div>
+	<a href="#" >forget your password?</a>
+
+	<div class="signup-button d-flex align-items-center justify-content-center mx-auto">
+		<button class="border border-white text-capitalize  fs-6 mt-2 py-2 px-4" id="signIn_button">Sign In</button>
+	</div>
+</div>	
+</div>
+<!-- End form2-content -->
+
+
+<!-- start overlay-form -->
+<div class="overlay-form">
+	<div class="overlay">
+		<!-- start overlay-left -->
+		<div class="overlay-content overlay-left  overlay-shared-bg text-center">
+			<h2 class="fw-bold text-capitalize fs-3">welcome☺️back</h2>
+			<p class="mx-auto">To keep connected with us please login with your personal info</p>
+			<button class="ghost border border-white  text-capitalize  fs-6 mt-2 py-2 px-4" id="signInButton">sign in</button>
+		</div> 
+		<!-- end overlay-left -->
+
+		<!-- start overlay-right -->
+		<div class="overlay-content overlay-right  overlay-shared-bg text-center">
+			<h2 class="fw-bold text-capitalize">hello!</h2>
+			<p>Enter your personal details and enjoy favorit cake with us</p>
+			<button class="ghost border border-white  text-capitalize fs-6 mt-2 py-2 px-4" id="signUpButton">sign up</button>
+		</div>
+		<!-- end overlay-right -->
+		
+	</div> <!-- end overlay-->
+</div>
+<!-- end overlay-form-->
+
+
+</div>
+<!-- End row -->
+</div>
+<!-- End container -->
+</main>
+<!-- ------------------------------------Start main--------------------------------------- -->
+
+
+
+<script src="../asset/js/all.min.js"></script>
+<script src="../asset/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="../asset/js/script.js"></script>
+
+</body>
+</html>
