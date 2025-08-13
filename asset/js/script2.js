@@ -24,7 +24,7 @@ displayWelcomeMessage();
 function logout() {
     setTimeout(() => {
         sessionStorage.removeItem('loggedInUser');
-        window.location.href = '../templetindex.html'; // Redirect to the sign-in page
+        window.location.href = '../index.html'; // Redirect to the sign-in page
     }, 2500); // (3 seconds) delay before logout
 }
 // End

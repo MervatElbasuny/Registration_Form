@@ -142,7 +142,7 @@ function signIn() {
     // if he is a user and Successful sign-in logic - redirect to home page
   else {
         sessionStorage.setItem('loggedInUser', JSON.stringify(user));
-        location = '../home/home.html';
+        location = 'home/home.html';
         clearForm();
     }
 
